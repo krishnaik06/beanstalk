@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Single Regression</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='/single.css') }}">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   </head>
+   <body style="background: #03080a">
+      <div class="container">
+         <h2>Algerian Forest Temperature Prediction  </h2>
+         <form  action="/single_regression" method="POST">
+            <div class="row100">
+               <div class="col">
+                  <div class="inputBox">
+                     <input type="number" name="RH" required="required" step="0.01" >
+                     <span class="text">RH Range-[21 to 90]</span>
+                     <span class="line"></span>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="inputBox">
+                     <input type="number" name="Ws" required="required" step="0.01">
+                     <span class="text">WS Range-[9.5 to 21.5]</span>
+                     <span class="line"></span>
+                  </div>
+               </div>
+            </div>
+            <div class="row100">
+               <div class="col">
+                  <div class="inputBox">
+                     <input type="number" name="Rain" required="required" step="0.01">
+                     <span class="text">Rain Range-[0 to 1.25]</span>
+                     <span class="line"></span>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="inputBox">
+                     <input type="number" name="FFMC" required="required" step="0.01">
+                     <span class="text">FFMC Range-[47.7 to 96.0]</span>
+                     <span class="line"></span>
+                  </div>
+               </div>
+            </div>
+            <div class="row100">
+               <div class="col">
+                  <div class="inputBox">
+                     <input type="number" name="DMC" required="required" step="0.01">
+                     <span class="text">DMC Range-[0.7 to 43]</span>
+                     <span class="line"></span>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="inputBox">
+                     <input type="number" name="ISI" required="required" step="0.01" >
+                     <span class="text">ISI  Range-[0 to 16.15]</span>
+                     <span class="line"></span>
+                  </div>
+               </div>
+            </div>
+            <div class="row100">
+               <div class="col">
+                  <input type="radio" id="fire" name="classes" value=1>
+                  <label for="fire">REGION 1</label>
+                  <input type="radio" id="not_fire" name="classes" value=2>
+                  <label for="not_fire">REGION 2</label>
+               </div>
+            </div>
+            <div class="row100">
+               <div class="col">
+                  <div class="text-center">
+                     <input type="submit" >
+                     <a type="button" class="Back" href="{{url_for('index')}}">Back</a>
+                  </div>
+               </div>
+            </div>
+
+         </form>
+         {% if result %}
+         <div>
+            <h3><span id='prediction' style="color: orange"> Predicted Temperature :  {{result}}</span></h3>
+         </div> 
+         {% endif %}
+      </div>
+   </body>
+</html>

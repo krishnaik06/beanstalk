@@ -1,0 +1,111 @@
+body{
+    margin:0;
+    padding:0;
+    font-family : sans-serif;
+    background : black;
+}
+ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 20px 0;
+    background: #fff;
+    display: flex;
+    border-radius: 10px;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
+}
+ul li{
+    list-style: none;
+    text-align: center;
+    display: block;
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+ul li:last-child{
+    border-right :none;
+}
+ul li a
+{
+    text-decoration: none;
+    padding: 0 50px;
+    display: block;
+}
+ul li a .icon{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 auto 10px;
+}
+ul li a .icon .fa{
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 34px;
+    transition: 0.5s;
+    color: #000;
+}
+ul li a:hover .icon .fa:last-child{
+    color:orange;
+}
+ul li a:hover .icon .fa{
+    transform:translateY(-100%);
+}
+ul li a .name{
+    position: relative;
+    height: 20px;
+    width: 100%;
+    display:block;
+    overflow:hidden;
+}
+ul li a .name span{
+    display: block;
+    position: relative;
+    color: #000;
+    font-size: 18px;
+    line-height: 20px;
+    transition: 0.5s;
+}
+ul li a .name span:before{
+    content :attr(data-text);
+    position:absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: orange;
+}
+ul li a:hover .name span{
+    transform:translateY(20px);
+}
+article {
+    background: linear-gradient(
+      to right, 
+      hsl(98 100% 62%), 
+      hsl(204 100% 59%)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-top: 15%;
+  }
+  
+  h1 {
+    font-size: 8vmin;
+    line-height: 1.1;
+  }
+  
+  
+  h1, p, body {
+    margin: 0;
+  }
+  
+  p {
+    font-family: "Dank Mono", ui-monospace, monospace;
+  }
+  
+  html {
+    block-size: 100%;
+    inline-size: 100%;
+  }
